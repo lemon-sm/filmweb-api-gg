@@ -1,0 +1,38 @@
+App\Entity\Genre:
+  action:
+    name: "Akcji"
+  comedy:
+    name: "Komedia"
+  horror:
+    name: "Horror"
+
+App\Entity\Movie:
+  Twilight:
+    title: "Zmierzch"
+    releaseDate: <(new DateTime("2009-01-9"))>
+    description: "Adaptacja książki Stephenie Meyer. Nieśmiała i zagubiona nastolatka zakochuje się w wampirze."
+    genre: "@horror"
+  Zombieland:
+    title: "Zombieland"
+    releaseDate: <(new DateTime("2009-12-4"))>
+    description: "Film opowiada o dwóch całkowicie różnych od siebie mężczyznach, którzy znaleźli sposób na przetrwanie w świecie opanowanym przez zombie."
+    genre: "@comedy"
+  TheHungerGames:
+    title: "Igrzyska śmierci"
+    releaseDate: <(new DateTime("2012-03-23"))>
+    description: "W państwie Panem co roku odbywają się Głodowe Igrzyska - walka na śmierć i życie między przedstawicielami dwunastu Dystryktów. Gdy młodsza siostra Katniss zostaje wylosowana do zawodów, dziewczyna bez wahania zajmuje jej miejsce."
+    genre: "@action"
+
+App\Entity\Rate:
+  TwilightRate{1..30}:
+    value: <numberBetween(1, 5)>
+    movie: "@Twilight"
+  ZombielandRate{1..25}:
+    value: <numberBetween(1, 5)>
+    movie: "@Zombieland"
+  TheHungerGamesRate{1..40}:
+    value: <numberBetween(1, 5)>
+    movie: "@TheHungerGames"
+
+
+
